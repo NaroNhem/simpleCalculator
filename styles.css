@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'myFont';
+    src: url(Roboto/Roboto-Light.ttf);
+}
+body{
+    font-family: 'myFont', sans-serif;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.calcBody {
+    display: flex;
+    height: 30em;
+    width: 20em;
+    text-align: center;
+    margin: auto;
+    margin-top: 0%;
+    background-color: #587B89;
+    border-radius: 8px;
+    flex-direction: column;
+}
+.buttons {
+    display: flex;
+    margin: 1em;
+    flex-wrap: wrap;
+    height: 20em;
+    justify-content: space-between;
+}
+ .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    height: 2.3em;
+    width: 2.3em;
+    background-color: #e4eff1;
+    border-radius: 2em;
+    font-family: 'myFont', sans-serif;
+ }
+
+ .button:hover, .clear:hover {
+    background-color: #244C66;
+    color: white;
+    transition: all ease-in-out 0.1s
+ }
+
+.clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 57%;
+    height: 2.3em;
+    width: 7em;
+    background-color: #e4eff1;
+    border-radius: 2em;
+    font-family: 'myFont', sans-serif;
+}
+
+.display {
+    background-color: white;
+    margin: 1em;
+    width: 18em;
+    height: 3rem;
+    border: 1px solid #587B89;
+    border-radius: 8px;
+}
+
+.container {
+    padding: 100px;
+}
+
+.footer{
+    width: 100%;
+    margin-top: auto;
+    height: 3em;
+    background-color: #8BA1AD;
+    text-align: center;
+    font-family: 'myFont', sans-serif;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+      padding: 0%;
+      padding-top: 100px;
+    }
+  }
+
