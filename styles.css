@@ -28,13 +28,13 @@ body{
     height: 20em;
     justify-content: space-between;
 }
- .button {
+ .button, .operators, .equal {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px;
-    height: 2.3em;
-    width: 2.3em;
+    margin: 13px;
+    height: 2.7em;
+    width: 2.7em;
     background-color: #e4eff1;
     border-radius: 2em;
     font-family: 'myFont', sans-serif;
@@ -66,6 +66,10 @@ body{
     height: 3rem;
     border: 1px solid #587B89;
     border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
 }
 
 .container {
