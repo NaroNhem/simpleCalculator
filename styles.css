@@ -40,18 +40,17 @@ body{
     font-family: 'myFont', sans-serif;
  }
 
- .button:hover, .clear:hover {
+ .button:hover, .clear:hover, .aClear:hover, .operators:hover, .equal:hover{
     background-color: #244C66;
     color: white;
     transition: all ease-in-out 0.1s
  }
 
-.clear {
+.clear, .aClear {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
-    margin-left: 57%;
+    margin: 13px;
     height: 2.3em;
     width: 7em;
     background-color: #e4eff1;
@@ -69,7 +68,6 @@ body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
 }
 
 .container {
