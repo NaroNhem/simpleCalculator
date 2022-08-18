@@ -47,7 +47,7 @@ const displayNumber = function (number){
 }
 
 const displayOperator = function(op) {
-    displayValue.innerHTML += (" " + op + " ");
+    displayValue.innerHTML = op;
     
 }
 
@@ -60,23 +60,56 @@ const equal = function(array, operator) {
 
     }
 }
-
+const compute = function (a,b) {
+    switch (opArr[0]) {
+        case '+':
+            displayValue.innerHTML = add(a,b);
+            empty();
+            break;
+        case '-':
+            displayValue.innerHTML = subtract(a,b);
+            empty();
+            break;
+        case '/':
+            displayValue.innerHTML = divide(a,b);
+            empty();
+            break;
+        case '*':
+            displayValue.innerHTML = multiply(a,b);
+            empty();
+            break;
+    }
+};
 let opSymbol = operators.forEach(element => {
     element.addEventListener('click', (e) => {
+        values.push(parseFloat(displayValue.innerHTML));
         let value = element.innerHTML;
         displayOperator(value);
         opArr.push(value);
+        if (values.length > 1){
+            compute(values[0],values[1]);
+            values.push(parseFloat(displayValue.innerHTML));
+            opArr.push(value)
+        }
     })
 })
 
 btnPress.forEach(element => {
     element.addEventListener('click', (event) => {
         let value = parseFloat(element.innerHTML);
+        if (displayValue.innerHTML == "-" ||displayValue.innerHTML == "+" ||displayValue.innerHTML == "*" ||displayValue.innerHTML == "/"){
+            displayValue.innerHTML = "";
+        }
+        if (values[0] == parseFloat(displayValue.innerHTML)) {
+            displayValue.innerHTML = "";
+        } 
         displayNumber(value);
-        console.log(displayValue.innerHTML)
     });
 });
-
+const empty = function() {
+    opArr = [];
+    values = [];
+}
 clearBtn.addEventListener('click', (e) => {
     backSpace();
     values.pop();
@@ -90,20 +123,10 @@ aClear.addEventListener('click', (e) => {
 })
 
 equals.addEventListener('click', (e) => {
-    let extractNum = displayValue.innerHTML.match(/\d+/g);
-    extractNum.forEach(item => values.push(parseFloat(item)));
-    switch (opArr[0]) {
-        case '+':
-            displayValue.innerHTML = add(values[0],values[1]);
-            break;
-        case '-':
-            displayValue.innerHTML = subtract(values[0],values[1]);
-            break;
-        case '/':
-            displayValue.innerHTML = divide(values[0], values[1]);
-            break;
-        case '*':
-            displayValue.innerHTML = multiply(values[0],values[1]);
-            break;
+    // let extractNum = displayValue.innerHTML.match(/\d+/g);
+    if(values.length < 2) {
+        values.push(parseFloat(displayValue.innerHTML));
+        compute(values[0],parseFloat(displayValue.innerHTML));
     }
+    compute(values[0],values[1]);
 })

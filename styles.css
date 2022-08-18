@@ -28,7 +28,7 @@ body{
     height: 20em;
     justify-content: space-between;
 }
- .button, .operators, .equal {
+ .button, .operators, .equal, #decimal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,9 @@ body{
     border-radius: 2em;
     font-family: 'myFont', sans-serif;
  }
-
+.operators {
+    background-color: rgb(255, 123, 0);
+}
  .button:hover, .clear:hover, .aClear:hover, .operators:hover, .equal:hover{
     background-color: #244C66;
     color: white;
@@ -53,7 +55,7 @@ body{
     margin: 13px;
     height: 2.3em;
     width: 7em;
-    background-color: #e4eff1;
+    background-color: #468af0;
     border-radius: 2em;
     font-family: 'myFont', sans-serif;
 }
