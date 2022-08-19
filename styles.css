@@ -28,7 +28,7 @@ body{
     height: 20em;
     justify-content: space-between;
 }
- .button, .operators, .equal, #decimal {
+ .button, .operators, .equal, .decimal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,12 +42,18 @@ body{
 .operators {
     background-color: rgb(255, 123, 0);
 }
- .button:hover, .clear:hover, .aClear:hover, .operators:hover, .equal:hover{
+ .button:hover, .clear:hover, .aClear:hover, .operators:hover, .equal:hover, .decimal:hover {
     background-color: #244C66;
     color: white;
     transition: all ease-in-out 0.1s
  }
 
+ .operators:hover {
+    background-color: rgba(255, 52, 1, 0.788);
+ }
+ .clear:hover, .aClear:hover {
+    background-color: #064bb3e3;
+ }
 .clear, .aClear {
     display: flex;
     justify-content: center;

@@ -34,6 +34,8 @@ const equals = document.querySelector(".equal");
 
 const aClear = document.querySelector(".aClear");
 
+const decimal = document.querySelector(".decimal");
+
 
 let values = [];
 let opArr = [];
@@ -110,6 +112,13 @@ const empty = function() {
     opArr = [];
     values = [];
 }
+
+decimal.addEventListener('click', (e) => {
+    if (displayValue.innerHTML == opArr[0]) {
+        displayValue.innerHTML = "";
+    }
+    displayValue.innerHTML += ".";
+})
 clearBtn.addEventListener('click', (e) => {
     backSpace();
     values.pop();
